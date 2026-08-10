@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portal de Apoio à Saúde Mental Juvenil</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f4f8fb;
+            color: #263238;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #315c72;
+            color: white;
+            padding: 20px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            min-height: 420px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 8%;
+            background: linear-gradient(135deg, #d9eef7, #edf7f5);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #315c72;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #3b8c7a;
+            color: white;
+            border: none;
+            padding: 13px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #2e6f61;
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 60px 8%;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #315c72;
+            margin-bottom: 35px;
+            font-size: 2rem;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .card h3 {
+            color: #3b8c7a;
+            margin-bottom: 10px;
+        }
+
+        /* TESTE */
+
+        #teste {
+            background: #eaf3f6;
+        }
+
+        .teste-container {
+            max-width: 750px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .pergunta {
+            margin-bottom: 25px;
+        }
+
+        .pergunta p {
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        label {
+            display: block;
+            background: #f4f7f8;
+            padding: 10px;
+            margin: 7px 0;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        label:hover {
+            background: #e2eeee;
+        }
+
+        .resultado {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            background: #eef8f4;
+            border-left: 5px solid #3b8c7a;
+            border-radius: 8px;
+        }
+
+        /* MURAL */
+
+        .mural {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            resize: vertical;
+            margin-bottom: 15px;
+        }
+
+        .relatos {
+            margin-top: 30px;
+        }
+
+        .relato {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+        }
+
+        .relato small {
+            color: #777;
+        }
+
+        /* EMERGÊNCIA */
+
+        .emergencia {
+            background: #fff4f1;
+        }
+
+        .emergencia-box {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            border: 2px solid #e5b9ae;
+        }
+
+        .emergencia-box h3 {
+            color: #b34d3d;
+            margin-bottom: 15px;
+        }
+
+        .telefone {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #b34d3d;
+            margin: 15px 0;
+        }
+
+        footer {
+            background: #263f4b;
+            color: white;
+            text-align: center;
+            padding: 30px 8%;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 45px 5%;
+            }
+
+            .teste-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <nav>
+
+        <div class="logo">
+            🌱 Portal Bem-Estar Jovem
+        </div>
+
+        <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#apoio">Apoio</a></li>
+            <li><a href="#teste">Teste</a></li>
+            <li><a href="#mural">Mural</a></li>
+            <li><a href="#emergencia">Ajuda</a></li>
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+    <!-- INÍCIO -->
+
+    <section class="hero" id="inicio">
+
+        <div class="hero-content">
+
+            <h1>Portal de Apoio à Saúde Mental Juvenil</h1>
+
+            <p>
+                Um espaço digital para informação, acolhimento,
+                conscientização e acesso a canais de apoio.
+            </p>
+
+            <a href="#teste" class="btn">
+                Conheça o teste educativo
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- APOIO -->
+
+    <section id="apoio">
+
+        <h2>Como podemos ajudar?</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>📚 Informação</h3>
+
+                <p>
+                    Conteúdos educativos sobre saúde mental,
+                    emoções e bem-estar.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>🧠 Autoconhecimento</h3>
+
+                <p>
+                    Ferramentas educativas para estimular
+                    a reflexão sobre sentimentos e dificuldades.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>💬 Acolhimento</h3>
+
+                <p>
+                    Espaço para compartilhar experiências
+                    de forma responsável e moderada.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>🤝 Apoio profissional</h3>
+
+                <p>
+                    Informações para facilitar a busca
+                    por serviços e profissionais especializados.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TESTE -->
+
+    <section id="teste">
+
+        <h2>Teste Educativo de Bem-Estar</h2>
+
+        <div class="teste-container">
+
+            <p style="margin-bottom:25px;">
+                Responda às perguntas abaixo considerando
+                como você tem se sentido recentemente.
+            </p>
+
+
+            <form id="formTeste">
+
+                <div class="pergunta">
+
+                    <p>1. Tenho conseguido realizar minhas atividades normalmente.</p>
+
+                    <label>
+                        <input type="radio" name="q1" value="0">
+                        Sempre
+                    </label>
+
+                    <label>
+                        <input type="radio" name="q1" value="1">
+                        Às vezes
+                    </label>
+
+                    <label>
+                        <input type="radio" name="q1" value="2">
+                        Raramente
+                    </label>
+
+                </div>
+
+
+                <div class="pergunta">
+
+                    <p>2. Tenho conseguido conversar com alguém quando preciso.</p>
+
+                    <label>
+                        <input type="radio" name="q2" value="0">
+                        Sempre
+                    </label>
+
+                    <label>
+                        <input type="radio" name="q2" value="1">
+                        Às vezes
+                    </label>
+
+                    <label>
+                        <input type="radio" name="q2" value="2">
+                        Raramente
+                    </label>
+
+                </div>
+
+
+                <div class="pergunta">
+
+                    <p>3. Tenho conseguido descansar adequadamente.</p>
+
+                    <label>
+                        <input type="radio" name="q3" value="0">
+                        Sempre
+                    </label>
+
+                    <label>
+                        <input type="radio" name="q3" value="1">
+                        Às vezes
+                    </label>
+
+                    <label>
+                        <input type="radio" name="q3" value="2">
+                        Raramente
+                    </label>
+
+                </div>
+
+
+                <div class="pergunta">
+
+                    <p>4. Tenho sentido que consigo lidar com minhas dificuldades.</p>
+
+                    <label>
+                        <input type="radio" name="q4" value="0">
+                        Sempre
+                    </label>
+
+                    <label>
+                        <input type="radio" name="q4" value="1">
+                        Às vezes
+                    </label>
+
+                    <label>
+                        <input type="radio" name="q4" value="2">
+                        Raramente
+                    </label>
+
+                </div>
+
+
+                <button type="submit" class="btn">
+                    Ver resultado
+                </button>
+
+            </form>
+
+
+            <div id="resultado" class="resultado"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MURAL -->
+
+    <section id="mural">
+
+        <h2>Mural de Relatos</h2>
+
+        <div class="mural">
+
+            <p style="margin-bottom:20px;">
+                Este espaço permite o envio de relatos.
+                Na versão completa do projeto, os conteúdos
+                deverão passar por moderação antes da publicação.
+            </p>
+
+            <textarea
+                id="relato"
+                placeholder="Escreva seu relato aqui..."
+            ></textarea>
+
+            <button class="btn" onclick="enviarRelato()">
+                Enviar relato
+            </button>
+
+            <div class="relatos" id="relatos"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EMERGÊNCIA -->
+
+    <section class="emergencia" id="emergencia">
+
+        <div class="emergencia-box">
+
+            <h3>🚨 Precisa de ajuda imediata?</h3>
+
+            <p>
+                Em situações de sofrimento intenso ou crise,
+                procure ajuda profissional ou um serviço de emergência.
+            </p>
+
+            <div class="telefone">
+                CVV – 188
+            </div>
+
+            <p>
+                O Centro de Valorização da Vida oferece apoio emocional
+                gratuitamente.
+            </p>
+
+            <br>
+
+            <a
+                href="https://www.cvv.org.br/"
+                target="_blank"
+                class="btn"
+            >
+                Acessar CVV
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        Portal de Apoio à Saúde Mental Juvenil
+    </p>
+
+    <p>
+        Projeto educacional desenvolvido por estudantes.
+    </p>
+
+    <p>
+        © 2026
+    </p>
+
+</footer>
+
+
+<script>
+
+    /* ==========================
+       TESTE EDUCATIVO
+    ========================== */
+
+    const form = document.getElementById("formTeste");
+
+    form.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        let perguntas = ["q1", "q2", "q3", "q4"];
+
+        let pontuacao = 0;
+
+        for (let pergunta of perguntas) {
+
+            const resposta =
+                document.querySelector(
+                    `input[name="${pergunta}"]:checked`
+                );
+
+            if (!resposta) {
+
+                alert("Responda todas as perguntas.");
+
+                return;
+
+            }
+
+            pontuacao += Number(resposta.value);
+
+        }
+
+
+        const resultado =
+            document.getElementById("resultado");
+
+
+        let mensagem = "";
+
+
+        if (pontuacao <= 2) {
+
+            mensagem = `
+                <strong>Resultado educativo:</strong><br><br>
+
+                Suas respostas indicam que você percebe
+                seu bem-estar de forma relativamente positiva.
+
+                Continue cuidando da sua rotina, mantendo
+                relações de apoio e procurando ajuda quando
+                sentir necessidade.
+            `;
+
+        }
+
+        else if (pontuacao <= 5) {
+
+            mensagem = `
+                <strong>Resultado educativo:</strong><br><br>
+
+                Algumas respostas indicam possíveis dificuldades
+                no seu bem-estar.
+
+                Converse com alguém de confiança e considere
+                buscar orientação de um profissional.
+            `;
+
+        }
+
+        else {
+
+            mensagem = `
+                <strong>Resultado educativo:</strong><br><br>
+
+                Suas respostas indicam que pode ser importante
+                conversar com alguém de confiança e buscar
+                orientação profissional.
+
+                Este resultado não representa diagnóstico.
+
+                Se você estiver passando por uma situação
+                de crise, procure imediatamente um serviço
+                de apoio ou emergência.
+            `;
+
+        }
+
+
+        resultado.innerHTML = mensagem;
+
+        resultado.style.display = "block";
+
+        resultado.scrollIntoView({
+            behavior: "smooth"
+        });
+
+    });
+
+
+    /* ==========================
+       MURAL
+    ========================== */
+
+    function enviarRelato() {
+
+        const campo =
+            document.getElementById("relato");
+
+        const texto =
+            campo.value.trim();
+
+
+        if (texto === "") {
+
+            alert("Digite um relato antes de enviar.");
+
+            return;
+
+        }
+
+
+        const relatos =
+            document.getElementById("relatos");
+
+
+        const novoRelato =
+            document.createElement("div");
+
+        novoRelato.className = "relato";
+
+
+        novoRelato.innerHTML = `
+
+            <p>
+                ${texto}
+            </p>
+
+            <br>
+
+            <small>
+                Relato enviado para moderação.
+            </small>
+
+        `;
+
+
+        relatos.prepend(novoRelato);
+
+        campo.value = "";
+
+
+        alert(
+            "Relato enviado! Na versão completa, ele será analisado pela equipe responsável antes da publicação."
+        );
+
+    }
+
+</script>
+
+</body>
+</html>
