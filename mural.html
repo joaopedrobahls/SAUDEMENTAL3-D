@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mural | MenteJovem</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar"><a href="index.html" class="logo">🌿 MenteJovem</a>
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="apoio.html">Apoio</a></li>
+                <li><a href="teste.html">Teste</a></li>
+                <li><a href="mural.html" class="ativo">Mural</a></li>
+                <li><a href="psicologos.html">Psicólogos</a></li>
+                <li><a href="ajuda.html">Ajuda</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul><a href="cadastro.html" class="btn-nav">Cadastrar</a>
+        </nav>
+    </header>
+    <section class="page-hero"><span>COMUNIDADE</span>
+        <h1>Mural & experiências</h1>
+        <p>Leia experiências anônimas e compartilhe a sua com respeito.</p>
+    </section>
+    <main class="content">
+        <div class="blog-layout">
+            <section>
+                <div class="section-title left"><span>EXPERIÊNCIAS DA COMUNIDADE</span>
+                    <h2>Histórias que podem acolher</h2>
+                </div>
+                <div class="blog-grid">
+                    <article class="post"><span class="post-category">Ansiedade</span>
+                        <h3>Aprendi que pedir ajuda não me torna fraco</h3>
+                        <p>Durante muito tempo achei que precisava resolver tudo sozinho. Aos poucos, percebi que
+                            conversar com alguém de confiança poderia tornar os dias mais leves.</p><small>— Relato
+                            anônimo</small>
+                    </article>
+                    <article class="post"><span class="post-category">Autoconhecimento</span>
+                        <h3>Comecei a prestar atenção no que eu sentia</h3>
+                        <p>Eu costumava ignorar meus sentimentos. Escrever sobre eles me ajudou a perceber padrões e a
+                            entender quando precisava de apoio.</p><small>— Relato anônimo</small>
+                    </article>
+                    <article class="post"><span class="post-category">Escola</span>
+                        <h3>A pressão escolar estava me deixando cansado</h3>
+                        <p>Quando comecei a organizar minha rotina e conversar com pessoas próximas, consegui enxergar
+                            que não precisava dar conta de tudo ao mesmo tempo.</p><small>— Relato anônimo</small>
+                    </article>
+                    <article class="post"><span class="post-category">Relacionamentos</span>
+                        <h3>Aprendi a colocar limites</h3>
+                        <p>Entendi que uma relação saudável também precisa de respeito, diálogo e espaço para cada
+                            pessoa ser quem é.</p><small>— Relato anônimo</small>
+                    </article>
+                </div>
+            </section>
+            <aside class="blog-side">
+                <h3>Temas</h3><button class="filter-btn active">Todos</button><button
+                    class="filter-btn">Ansiedade</button><button class="filter-btn">Autoestima</button><button
+                    class="filter-btn">Escola</button><button class="filter-btn">Relacionamentos</button>
+            </aside>
+        </div>
+        <div class="mural-box">
+            <h2>Quer compartilhar sua experiência?</h2>
+            <p>Escreva abaixo. No projeto completo, o conteúdo passará por moderação antes da publicação.</p><textarea
+                id="relato" placeholder="Escreva seu relato aqui..."></textarea><button class="btn"
+                onclick="enviarRelato()">Enviar para moderação →</button>
+        </div>
+        <div class="relatos-area">
+            <div class="section-title left"><span>NOVOS RELATOS</span>
+                <h2>Comunidade</h2>
+            </div>
+            <div id="relatos"></div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-bottom">© 2026 MenteJovem — Projeto educacional.</div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

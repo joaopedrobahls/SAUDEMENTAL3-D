@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psicólogos | MenteJovem</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar"><a href="index.html" class="logo">🌿 MenteJovem</a>
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="apoio.html">Apoio</a></li>
+                <li><a href="teste.html">Teste</a></li>
+                <li><a href="mural.html">Mural</a></li>
+                <li><a href="psicologos.html" class="ativo">Psicólogos</a></li>
+                <li><a href="ajuda.html">Ajuda</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul><a href="cadastro.html" class="btn-nav">Cadastrar</a>
+        </nav>
+    </header>
+    <section class="page-hero"><span>REDE DE PROFISSIONAIS</span>
+        <h1>Encontre um psicólogo</h1>
+        <p>Conheça perfis cadastrados, suas áreas de atuação e avaliações da comunidade.</p>
+    </section>
+    <main class="content">
+        <div class="search-panel"><input id="buscaPsi" type="search"
+                placeholder="🔎 Buscar por nome ou especialidade..."><select id="filtroPsi">
+                <option value="">Todas as especialidades</option>
+                <option value="Ansiedade">Ansiedade</option>
+                <option value="Autoestima">Autoestima</option>
+                <option value="Adolescentes">Adolescentes</option>
+                <option value="Relacionamentos">Relacionamentos</option>
+                <option value="Orientação profissional">Orientação profissional</option>
+            </select></div>
+        <div id="psicologosGrid" class="psych-grid">
+            <article class="psych-card" data-tags="Ansiedade Adolescentes Psicologia clínica">
+                <div class="psych-avatar">👩‍⚕️</div>
+                <div class="verified">✓ Perfil verificado*</div>
+                <h2>Ana Oliveira</h2>
+                <p class="specialty">Psicologia clínica · Adolescentes</p>
+                <div class="rating">★★★★★ <b>4,9</b> <small>(28 avaliações)</small></div>
+                <div class="chips"><span>Ansiedade</span><span>Adolescentes</span><span>Online</span></div>
+                <p>Atendimento acolhedor com foco em jovens e desenvolvimento emocional.</p><button class="btn small"
+                    onclick="abrirPerfil('Ana Oliveira','Psicologia clínica · Adolescentes','4,9','28','Ansiedade, Adolescentes, Online')">Ver
+                    perfil →</button>
+            </article>
+            <article class="psych-card" data-tags="Autoestima Relacionamentos">
+                <div class="psych-avatar">👨‍⚕️</div>
+                <div class="verified">✓ Perfil verificado*</div>
+                <h2>Lucas Mendes</h2>
+                <p class="specialty">Psicologia clínica · Jovens</p>
+                <div class="rating">★★★★★ <b>4,8</b> <small>(19 avaliações)</small></div>
+                <div class="chips"><span>Autoestima</span><span>Relacionamentos</span><span>Online</span></div>
+                <p>Atuação voltada para autoestima, relações e desafios da juventude.</p><button class="btn small"
+                    onclick="abrirPerfil('Lucas Mendes','Psicologia clínica · Jovens','4,8','19','Autoestima, Relacionamentos, Online')">Ver
+                    perfil →</button>
+            </article>
+            <article class="psych-card" data-tags="Orientação profissional Adolescentes">
+                <div class="psych-avatar">👩‍⚕️</div>
+                <div class="verified">✓ Perfil verificado*</div>
+                <h2>Mariana Costa</h2>
+                <p class="specialty">Orientação profissional</p>
+                <div class="rating">★★★★★ <b>4,7</b> <small>(15 avaliações)</small></div>
+                <div class="chips"><span>Carreira</span><span>Adolescentes</span><span>Presencial</span></div>
+                <p>Auxilia jovens em escolhas acadêmicas e profissionais.</p><button class="btn small"
+                    onclick="abrirPerfil('Mariana Costa','Orientação profissional','4,7','15','Carreira, Adolescentes, Presencial')">Ver
+                    perfil →</button>
+            </article>
+            <article class="psych-card" data-tags="Ansiedade Autoestima">
+                <div class="psych-avatar">👨‍⚕️</div>
+                <div class="verified">✓ Perfil verificado*</div>
+                <h2>Rafael Santos</h2>
+                <p class="specialty">Psicologia clínica</p>
+                <div class="rating">★★★★★ <b>4,9</b> <small>(34 avaliações)</small></div>
+                <div class="chips"><span>Ansiedade</span><span>Autoestima</span><span>Online</span></div>
+                <p>Atendimento focado em acolhimento e desenvolvimento pessoal.</p><button class="btn small"
+                    onclick="abrirPerfil('Rafael Santos','Psicologia clínica','4,9','34','Ansiedade, Autoestima, Online')">Ver
+                    perfil →</button>
+            </article>
+        </div>
+        <p class="disclaimer">* Perfis e avaliações acima são exemplos demonstrativos para o protótipo. Em produção, os
+            dados e o CRP precisam ser validados.</p>
+    </main>
+    <div id="profileModal" class="modal">
+        <div class="modal-box"><button class="close" onclick="fecharPerfil()">×</button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-bottom">© 2026 MenteJovem — Projeto educacional.</div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

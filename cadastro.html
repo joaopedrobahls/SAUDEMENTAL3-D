@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | MenteJovem</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar"><a href="index.html" class="logo">🌿 MenteJovem</a>
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="apoio.html">Apoio</a></li>
+                <li><a href="teste.html">Teste</a></li>
+                <li><a href="mural.html">Mural</a></li>
+                <li><a href="psicologos.html">Psicólogos</a></li>
+                <li><a href="ajuda.html">Ajuda</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="page-hero"><span>FAÇA PARTE DO MENTEJOVEM</span>
+        <h1>Crie sua conta</h1>
+        <p>Escolha como você deseja utilizar a plataforma.</p>
+    </section>
+    <main class="content">
+        <div class="profile-choice">
+            <button class="choice active" data-type="jovem"><span>👤</span>
+                <h2>Sou jovem / usuário</h2>
+                <p>Quero acessar conteúdos, ferramentas e experiências.</p>
+            </button>
+            <button class="choice" data-type="psicologo"><span>🧑‍⚕️</span>
+                <h2>Sou psicólogo</h2>
+                <p>Quero apresentar meu perfil profissional.</p>
+            </button>
+        </div>
+        <form id="cadastroForm" class="form-card">
+            <h2 id="formTitle">Cadastro de usuário</h2>
+            <div class="form-grid">
+                <div class="field"><label>Nome completo</label><input required type="text" name="nome"
+                        placeholder="Seu nome"></div>
+                <div class="field"><label>E-mail</label><input required type="email" name="email"
+                        placeholder="seu@email.com"></div>
+                <div class="field"><label>Senha</label><input required type="password" name="senha"
+                        placeholder="Crie uma senha"></div>
+                <div class="field" id="idadeField"><label>Data de nascimento</label><input type="date"
+                        name="nascimento"></div>
+            </div>
+            <div id="professionalFields" class="hidden">
+                <h3>Dados profissionais</h3>
+                <div class="form-grid">
+                    <div class="field"><label>CRP</label><input name="crp" placeholder="Ex.: 00/00000"></div>
+                    <div class="field"><label>Estado</label><select name="estado">
+                            <option value="">Selecione</option>
+                            <option>PR</option>
+                            <option>SP</option>
+                            <option>SC</option>
+                            <option>RS</option>
+                            <option>RJ</option>
+                            <option>MG</option>
+                            <option>Outro</option>
+                        </select></div>
+                    <div class="field"><label>Especialidade principal</label><select name="especialidade">
+                            <option value="">Selecione</option>
+                            <option>Psicologia clínica</option>
+                            <option>Ansiedade</option>
+                            <option>Autoestima</option>
+                            <option>Adolescentes</option>
+                            <option>Relacionamentos</option>
+                            <option>Orientação profissional</option>
+                        </select></div>
+                    <div class="field"><label>Modalidade</label><select name="modalidade">
+                            <option>Online</option>
+                            <option>Presencial</option>
+                            <option>Online e presencial</option>
+                        </select></div>
+                    <div class="field full"><label>Sobre seu trabalho</label><textarea name="bio"
+                            placeholder="Conte brevemente sobre sua atuação..."></textarea></div>
+                </div>
+                <div class="verification-note">🔒 No sistema real, o registro profissional deverá ser validado antes do
+                    perfil receber o selo de verificação.</div>
+            </div>
+            <label class="check"><input type="checkbox" required> Concordo com os termos e com a finalidade educativa da
+                plataforma.</label>
+            <button class="btn" type="submit">Criar cadastro →</button>
+            <div id="cadastroMsg" class="success-message"></div>
+        </form>
+    </main>
+    <footer>
+        <div class="footer-bottom">© 2026 MenteJovem — Projeto educacional.</div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

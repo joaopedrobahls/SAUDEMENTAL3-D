@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste | MenteJovem</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar"><a href="index.html" class="logo">🌿 MenteJovem</a>
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="apoio.html">Apoio</a></li>
+                <li><a href="teste.html" class="ativo">Teste</a></li>
+                <li><a href="mural.html">Mural</a></li>
+                <li><a href="psicologos.html">Psicólogos</a></li>
+                <li><a href="ajuda.html">Ajuda</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul><a href="cadastro.html" class="btn-nav">Cadastrar</a>
+        </nav>
+    </header>
+    <section class="page-hero"><span>AUTOCONHECIMENTO</span>
+        <h1>Como você está se sentindo?</h1>
+        <p>Responda pensando em como você tem se sentido recentemente.</p>
+    </section>
+    <main class="content">
+        <div class="warning"><strong>⚠️ Atenção</strong>
+            <p>Este questionário é educativo, não realiza diagnóstico e não substitui avaliação profissional.</p>
+        </div>
+        <form id="formTeste" class="teste">
+            <div class="question"><span>01</span>
+                <h3>Tenho conseguido realizar minhas atividades normalmente.</h3><label><input type="radio" name="q1"
+                        value="0"> Sempre</label><label><input type="radio" name="q1" value="1"> Às
+                    vezes</label><label><input type="radio" name="q1" value="2"> Raramente</label>
+            </div>
+            <div class="question"><span>02</span>
+                <h3>Tenho conseguido conversar com alguém quando preciso.</h3><label><input type="radio" name="q2"
+                        value="0"> Sempre</label><label><input type="radio" name="q2" value="1"> Às
+                    vezes</label><label><input type="radio" name="q2" value="2"> Raramente</label>
+            </div>
+            <div class="question"><span>03</span>
+                <h3>Tenho conseguido descansar adequadamente.</h3><label><input type="radio" name="q3" value="0">
+                    Sempre</label><label><input type="radio" name="q3" value="1"> Às vezes</label><label><input
+                        type="radio" name="q3" value="2"> Raramente</label>
+            </div>
+            <div class="question"><span>04</span>
+                <h3>Tenho sentido que consigo lidar com minhas dificuldades.</h3><label><input type="radio" name="q4"
+                        value="0"> Sempre</label><label><input type="radio" name="q4" value="1"> Às
+                    vezes</label><label><input type="radio" name="q4" value="2"> Raramente</label>
+            </div>
+            <button class="btn" type="submit">Ver resultado →</button>
+            <div id="resultado" class="resultado"></div>
+        </form>
+    </main>
+    <footer>
+        <div class="footer-bottom">© 2026 MenteJovem — Projeto educacional.</div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
